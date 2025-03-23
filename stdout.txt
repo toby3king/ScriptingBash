@@ -1,0 +1,10 @@
+escritos.txt
+practica_bash.sh
+stdout.txt
+escritos.txt
+practica_bash.sh
+stdout.txt
+escritos.txt
+practica_bash.sh
+stderror.txt
+stdout.txt
