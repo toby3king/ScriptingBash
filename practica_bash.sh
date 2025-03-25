@@ -1,4 +1,4 @@
-#!/usr/bin/zsh
+#!/usr/bin/bash
 
 # consideraciones: al ejecutar el bash este lo hace desde el directorio que es llamado
 # si necesitas un directorio especifico deberas moverte a la ruta con cd primero.
@@ -253,16 +253,16 @@
     
 # numbers operadores de c: +,-,*,/,%
 
-	echo 10+20
+	#echo 10+20
 	
-	echo $(( 10 + 20 ))
+	#echo $(( 10 + 20 ))
 	
-	echo $(( 10 - 20 ))
+	#echo $(( 10 - 20 ))
 	
-	x=10
-	y=100
+	#x=10
+	#y=100
 	
-	echo $(( x * y ))
+	#echo $(( x * y ))
 	
 	# solo poniendolo entre parentesis con el id de var se realiza la operacion
 
@@ -275,15 +275,98 @@
 # declare: otra forma de definir variables
 
 
-	declare -r myvar=~/ #con -r le indico que es solo lectura
+	#declare -r myvar=~/ # con -r le indico que es solo lectura
 	
 	# esto permite mas control de nuestras variables
 	
+# arrays
+
 	
+	# [*] trata al array como un solo string
+	
+	# [@] mantiene la independencia de strings
+	
+	#nombres=( "jhon" "toto" "pipeline" ) # declarar strings
+	
+	#echo "los nonmbres son: ${nombres[*]}" # entre corchetes va el index, el */@ indica all
+	
+	#echo "los indices: ${!nombres[*]}" # en bash se usa ! en lugar de (k)
+	
+	#echo "total de items: ${#nombres[*]}" # en bash se usa numeral para contar n de elementos
+	
+	#echo " el ultimo elemento es: ${nombres[${#nombres[@]}-1]} " # accedo al ultimo elemento
+	
+	#for name in "${nombres[@]}"
+	#do
+		#echo "el nombre del array es $name "
+	#done
+	
+	# eliminar
+	
+	#unset nombres[1] # borro segundo elemento, no compacta array
+	
+	#echo " ${nombres[@]}"
+	
+	# añadir 
+
+	#nombres[${#nombres[@]}]="cristofer"
+	
+	#echo " ${nombres[@]}" 
+	
+	#nombres+=("ben10") # equivalente a la anterior
+	
+	#echo " ${nombres[@]}" 
+	
+	
+# functions
+
+	# las variables de las funciones son globales
 
 
+	#function sayhello(){
+		#local msj="mensaje local" # lo declaro como local
+		#echo "hello world $1"
+		#echo $msj;
+		#} # la identacion da problemas
+		
+		
+	#for i in {0..10..1}
+	 #do
+	     #sayhello $i
+	 #done
+	 
+	 
+# directories
 
+	#chequear carpetas y herramoientas
+	
+	#folder="prueba_comprobar_carpeta"
+	
+	
+	#if [ -d $folder ] # comprueba en entorno de ejecucion
+	#then
+	#echo "la carpeta $folder existe"
+	#else
+	#echo "la carpeta $folder no existe"
+	#fi
+	
+	# con -f controlas files
+	
+# curl 
 
+	# hace peticiones http
+	# muy util para trabajar con apis y servidores
+	
+	
+	# Descargar una imagen de ejemplo 
+	
+	#curl -o imagen-descargada.jpg https://cdn.pixabay.com/photo/2022/12/02/21/20/blue-7631674_1280.jpg
+
+# debugging
+
+  #bash -x
+  
+  # sirve para debugear
 
 
 
