@@ -367,6 +367,11 @@
   #bash -x
   
   # sirve para debugear
+  
+  ## nota al pie
+  
+  # para manejo de tiempo y programas,programas en segundo plano y demonios:
+  # buscar en repositorio la carpeta "manejo_de_tiempo_y_programas"
 
 
 
