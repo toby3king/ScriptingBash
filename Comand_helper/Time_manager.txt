@@ -1,0 +1,77 @@
+comandos para poner en espera un programa en bash scripting
+
+sleep---- recibe un int/float, espera esa cantidad de segundos
+
+sleep 5
+echo "Han pasado 5 segundos"
+
+wait---recibe el pid de un proceso, espera a su finalizacion para continuar
+
+mi_programa &
+
+PID=$! #sirve para guar el pid de un programa ejecutado en segundo plano
+
+wait $PID
+
+##aclaraciones
+
+##en programas mas complejos es una buena practica guardar el pid al momento
+##de declarar un proceso que se ejecuta en segundo plano.
+
+## con el comando jobs, podes ver los ps en segundo plano.
+
+## con fg %"posicion" los traes a primer plano
+
+## con nohup "programa" podes independizar el proceso de la terminal, convirtiendolo en demonio
+
+## con "programa" & disown lo separas totalmente de la terminal
+
+## la diferencia radica en que disown se puede aplicar a un proceso en ejecucion
+
+## El archivo nohup.out almacena la salida estándar (stdout) 
+## y los errores (stderr) de los procesos ejecutados con nohup
+
+##Si no quieres que la salida vaya a nohup.out, puedes redirigirla manualmente:
+
+
+## nohup mi_programa > salida.log 2>&1 &
+
+## Si no quieres que se cree nohup.out, puedes hacer esto:
+
+## nohup mi_programa > /dev/null 2>&1 &
+
+## 2 es la const para stdr, y >&1 indica que envie stdr al mismo destino que stdout
+## stdout se declaro como salida.log en este caso
+
+##solucion para el stdin en los programas en segundo plano
+
+## proporcionar un txt como entrada
+##nohup cat < entrada.txt > salida.txt 2>&1 &
+
+## usar pipes para read
+
+##echo "Juan" | nohup bash -c 'read nombre; echo "Hola, $nombre"' > salida.txt 2>&1 &
+
+## usar .log es una buena practica para guardar in/outs/erros, su formato es identico 
+## a un txt, pero hay programas que trabajan directamente con .log, por eso es recomendable su uso
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
